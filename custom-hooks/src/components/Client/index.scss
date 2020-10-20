@@ -1,0 +1,12 @@
+.Client {
+    margin: 30px;
+    padding: 20px 10px;
+    border: 1px solid #333;
+    list-style: none;
+    text-align: center;
+
+    &__image {
+        width: 100%;
+        min-height: 260px;
+    }
+}

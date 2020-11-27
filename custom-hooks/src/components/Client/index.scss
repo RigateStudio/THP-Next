@@ -1,0 +1,21 @@
+.Client {
+    margin: 30px;
+    padding: 20px 10px;
+    border: 1px solid #333;
+    list-style: none;
+    text-align: center;
+
+    &__name {
+        flex: 1;
+    }
+
+    &__actions {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+
+        &__item {
+            margin-right: 10px;
+        }
+    }
+}

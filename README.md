@@ -64,3 +64,8 @@ et comportant quelques fonctions utilitaires qui sont testées avec `Jest` (voir
 
 Dans le dossier [/GildedRose](/GildedRose), vous trouverez une version du refactoring du mini-projet
 "Gilded Rose", avec les tests unitaires associés.
+
+## Un exemple de custom hook React
+
+Dans le dossier [/custom-hooks](/custom-hooks), on trouvera une mini application React avec un 
+custom-hook qui permet de prendre en charge l'écoute du scroll de la page.

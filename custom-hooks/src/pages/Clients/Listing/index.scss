@@ -1,4 +1,6 @@
 .ClientsListing {
+    margin: 0;
+
     &__scroll-pos {
         position: fixed;
     }
@@ -12,6 +14,23 @@
 
         .Client {
             flex: 1 1 200px;
+        }
+    }
+
+    &--list-mode {
+        .ClientsListing__list {
+            flex-direction: column;
+            flex-wrap: nowrap;
+
+            .Client {
+                flex: 0 0 auto;
+                display: flex;
+                align-items: center;
+
+                &__actions {
+                    justify-content: right;
+                }
+            }
         }
     }
 }

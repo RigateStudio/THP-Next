@@ -1,26 +1,27 @@
 import './index.scss';
-import { useLayoutEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import Client from 'components/Client';
+import useScroll from 'hooks/useScroll';
 
 const ClientsListing = ({ data }) => {
-    const [scrollY, setScrollY] = useState(0);
+    const scrollY = useScroll();
 
-    useLayoutEffect(() => {
-        const handleScroll = () => {
-            const scrollY = document.documentElement.scrollTop;
-            setScrollY(scrollY);
-        };
+    const [mode, setMode] = useState('grid');
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, []);
+    const handleChangeMode = useCallback(() => {
+        setMode(mode === 'list' ? 'grid' : 'list');
+    }, [mode]);
+
+    let classNames = 'ClientsListing';
+    if (mode === 'list') {
+        classNames += ' ClientsListing--list-mode';
+    }
 
     return (
-        <div className="ClientsListing">
+        <div className={classNames}>
             <h4 className="ClientsListing__scroll-pos">
-                Scroll: {Math.round(scrollY)}px
+                Scroll: {Math.round(scrollY)}px<br />
+                <button onClick={handleChangeMode}>Toggle mode</button>
             </h4>
             <ul className="ClientsListing__list">
                 {data.map(({ id, firstName, lastName, phoneNumber }) => (

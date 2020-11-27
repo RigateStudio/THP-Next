@@ -5,8 +5,17 @@
     list-style: none;
     text-align: center;
 
-    &__image {
-        width: 100%;
-        min-height: 260px;
+    &__name {
+        flex: 1;
+    }
+
+    &__actions {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+
+        &__item {
+            margin-right: 10px;
+        }
     }
 }
